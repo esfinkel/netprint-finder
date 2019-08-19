@@ -1,0 +1,72 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    padding: 20px 40px;
+    background-color: #eee;
+}
+
+#info {
+    /* display: none; Will not appear until there is some data */
+
+    border: 10px solid green;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+    min-height: 100px;
+    box-shadow: 5px 10px #888888;
+    background: #F8F8FF;  
+}
+
+.btn {
+    border: 1px solid transparent;
+    border: 0.1em solid #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+
+    vertical-align: middle;
+    user-select: none;
+}
+
+
+.btn#runner {
+    color: #ffffff;
+    text-shadow: 0px  -2px 0px rgba(0,0,0,.5);
+
+    background: linear-gradient(#3d85c6, #073763);
+    height: 50px;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+
+    -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+} .btn#runner:hover {
+    background: linear-gradient(#85b3db, #466685);
+} .btn#runner:active {
+    -webkit-transform: translate(0, 4px);
+    -moz-transform: translate(0, 4px);
+    transform: translate(0, 4px);
+
+    -webkit-box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    -moz-box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+}
+
+
+.btn#refresher {
+    background: inherit;
+    font: inherit;
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+} .btn#refresher:hover {
+    background: rgb(197, 197, 197);
+}
