@@ -12,6 +12,7 @@ function getPosition(position) {
     currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
     waiting.style.display = "none";
     settings.style.display = "block";
+    runProgram();
 }
 
 
