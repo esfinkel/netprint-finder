@@ -61,12 +61,12 @@ body {
 }
 
 
-.btn#refresher {
+.btn-faded {
     background: inherit;
     font: inherit;
     height: 30px;
     margin-bottom: 10px;
     padding: 6px 12px;
-} .btn#refresher:hover {
+} .btn-faded:hover {
     background: rgb(197, 197, 197);
 }
