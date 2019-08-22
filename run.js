@@ -102,13 +102,13 @@ function available(schedule) {
 
 function print_answer(dists, type, quantity) {
     // Print answer
-    var ans = 'Showing '+quantity+' printers of type "'+type+'":<br/><br/>';
+    var ans = 'Showing '+quantity+' printers of type "'+type+'":<br/>';
     ans += '<ol>';
     dists.forEach( dist => {
-        if (dist[2]==true) var secondPart = 'is open. It closes in about ' + dist[3] + ' minutes.\n';
-        else var secondPart = 'might be open.\n';
+        if (dist[2]==true) var secondPart = 'Open; closes in about ' + dist[3] + ' minutes.';
+        else var secondPart = 'Might be open.';
         var pAns = '<li>Printer "' + dist[0];
-        pAns += '" is ' + Math.round(dist[1]*100)/100+' km away and ' + secondPart + '</li>';
+        pAns += '". ' + Math.round(dist[1]*100)/100+' km away. ' + secondPart + '</li>';
         ans += pAns;
     })
     ans += '</ol>';
