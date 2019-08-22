@@ -10,8 +10,8 @@ body {
 
     border: 10px solid green;
     border-radius: 15px;
-    padding: 20px;
-    margin: 20px;
+    padding: 10px;
+    margin: 5px;
     min-height: 100px;
     box-shadow: 5px 10px #888888;
     background: #F8F8FF;  
@@ -70,3 +70,24 @@ body {
 } .btn-faded:hover {
     background: rgb(197, 197, 197);
 }
+
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 49%;
+  }
+    
+  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 98%;
+    }
+  }

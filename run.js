@@ -1,3 +1,11 @@
+// Additional features
+
+function reportIssue() {
+    form = document.getElementById("reportIssueForm");
+    form.style.display = "block";
+}
+
+// Main functionality
 
 function getLocation() {
     if (navigator.geolocation) {

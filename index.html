@@ -17,7 +17,7 @@
 
         <div id="err"><br/></div>
         
-        <div id="settings" style="display: none"}>
+        <div id="settings" style="display: none">
 
             <div style="font-size: 0.8rem">Note that you'll want to <input id="refresher" class="btn btn-faded" type="button" value="refresh the page" onclick="history.go(0)" /> if your location changes.</div>
             <br/>
@@ -26,29 +26,32 @@
             <div id="info" style="display: none"></div>
             <br/>
     
-
-            <p>Printer type:</p>
-
-            <input type="radio" name="p-type" value="black-and-white"> Black and white<br>
-            <input type="radio" name="p-type" value="color"> Color<br>
-            <input type="radio" name="p-type" value="both" checked> Both<br>
-
-            <!-- <br/> -->
-
-            <p>
-                Number of results to display: 
-                <input type="number" name="quantity" min="1" max="50" step="1" value="5" style="font-size: inherit;">
-            </p>
-
-            <br/>
-
-            <button id="runner" class="btn" onclick="runProgram()" autofocus>Update</button> <br/>
+            <div class="row">
+                <div class="column" onchange="runProgram()">
+                    Printer type:<br/>
+                    <input type="radio" name="p-type" value="black-and-white"> Black and white<br>
+                    <input type="radio" name="p-type" value="color"> Color<br>
+                    <input type="radio" name="p-type" value="both" checked> Both<br>
+                    <br>
+                </div>
+                                
+                <div class="column" onchange="runProgram()">
+                    Number of printers:<br/>
+                    <input type="number" name="quantity" min="1" max="50" step="1" value="5" style="font-size: inherit;">
+                    <br/>
+                </div>
+                
+                <!-- <div class="column">
+                    <p></p>
+                    <button id="runner" class="btn" onclick="runProgram()">Update</button>
+                    <br/>
+                </div> -->
+            </div>
 
         </div>
-        <br/>
 
+        <br/><br/>
 
-        <br/><br/><br/>
         <div style="font-size: 0.8rem">
             <form target="_blank" action="https://forms.gle/s4ptjaZuXGBzFHrK8">
                 Printer not listed? Existing printer has incorrect data?
@@ -56,6 +59,30 @@
             </form>
             <br/>
             <a href="https://github.com/esfinkel/netprint-finder">See the GitHub repository</a>
+            <br><br>
+            
+            Problems with the site? <button onclick="reportIssue()" class="btn btn-faded">Report here</button>
+
+            <form id="reportIssueForm" style="display: none" action="https://formspree.io/finkelelisabeth@gmail.com" method="POST">
+                <div>
+                    <label for="name">Enter your name: </label><br/>
+                    <input type="text" name="name" id="name" required/>
+                </div>
+                <br/>
+                <div>
+                    <label for="email">Enter your email: </label><br/>
+                    <input type="email" name="email" id="email" required/>
+                </div>
+                <br/>
+                <div>
+                    <label for="message">What is the issue?</label><br/>
+                    <textarea name="message" cols="80" rows="5" style="max-width: 100%"></textarea>
+                </div>
+                <br/>
+                <div>
+                    <input class="btn btn-faded" type="submit" className="normlink" value="Submit"/>
+                </div>
+            </form>
         </div>
 
 
