@@ -102,17 +102,19 @@ function available(schedule) {
 
 function print_answer(dists, type, quantity) {
     // Print answer
-    var ans = 'Showing '+quantity+' printers of type "'+type+'":<br/>';
-    ans += '<ol>';
+    var label = 'Showing '+quantity+' printers of type "'+type+'"<br><br>';
+    var ans = '<ol>';
     dists.forEach( dist => {
-        if (dist[2]==true) var secondPart = 'Open; closes in about ' + dist[3] + ' minutes.';
-        else var secondPart = 'Might be open.';
-        var pAns = '<li>Printer "' + dist[0];
-        pAns += '". ' + Math.round(dist[1]*100)/100+' km away. ' + secondPart + '</li>';
+        if (dist[2]==true) var secondPart = 'Open; closes in about ' + dist[3] + ' minutes.';       // 3
+        else var secondPart = 'Might be open.';                                                     // 3
+        var pAns = '<li>Printer "' + dist[0];                                                       // 1
+        pAns += '". ' + Math.round(dist[1]*100)/100+' km away. ' + secondPart + '</li>';            // 2
         ans += pAns;
     })
     ans += '</ol>';
+    infoLabel.style.display = "block";
     info.style.display = "block";
+    infoLabel.innerHTML = label;
     info.innerHTML = ans;
 }
 
@@ -141,6 +143,7 @@ function init() {
     settings = document.getElementById("settings");
     err = document.getElementById("err");
     info = document.getElementById("info");
+    infoLabel = document.getElementById("infoLabel");
     
     currentLocation = false;
 
