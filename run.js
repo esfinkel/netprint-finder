@@ -10,6 +10,8 @@ function getLocation() {
 
 function getPosition(position) {
     currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
+    window.console.log("If you're curious:");
+    window.console.log(currentLocation);
     waiting.style.display = "none";
     settings.style.display = "block";
     runProgram();
@@ -127,12 +129,13 @@ function runProgram() {
 
 function init() {
 
-    var waiting = document.getElementById("waiting");
-    var settings = document.getElementById("settings");
-    var err = document.getElementById("err");
-    var info = document.getElementById("info");
+    waiting = document.getElementById("waiting");       // for whatever reason, having "var" makes it not global in Chrome
+    settings = document.getElementById("settings");
+    err = document.getElementById("err");
+    info = document.getElementById("info");
     
-    var currentLocation = false;
+    currentLocation = false;
+
     getLocation();
 
 }
