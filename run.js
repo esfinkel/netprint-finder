@@ -122,13 +122,13 @@ function print_answer(dists, type, quantity) {
 
 
 function runProgram() {
-    
     var relevant_printers = [];
-    var type = document.querySelector('input[name="p-type"]:checked').value;
-    switch (type) {
-        case 'black-and-white': relevant_printers = printers_bw; break;
-        case 'color': relevant_printers = printers_color; break;
-        default: relevant_printers = printers_bw.concat(printers_color); break;
+    // var type = document.querySelector('input[name="p-type"]:checked').value;
+    var type = 'any';
+    switch (printerType.innerText) {
+        case 'b': {relevant_printers = printers_bw.concat(printers_color); break;}
+        case 'c': {relevant_printers = printers_color; type = "color"; break;}
+        default: {relevant_printers = printers_bw.concat(printers_color); break;}
     }
     
     var quantity = document.querySelector('input[name="quantity"]').value;
@@ -138,6 +138,13 @@ function runProgram() {
 }
 
 
+function setPrinterType(key) {
+    if (printerType.innerHTML !== key) {
+        printerType.innerHTML=key;
+        runProgram();
+    } 
+}
+
 
 function init() {
 
@@ -145,6 +152,7 @@ function init() {
     settings = document.getElementById("settings");
     info = document.getElementById("info");
     infoLabel = document.getElementById("infoLabel");
+    printerType = document.getElementById("printer-type");
     
     currentLocation = false;
 

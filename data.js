@@ -84,7 +84,7 @@ var printers_color = [
 
     ['aap-mil-1mfp/aap-mil-2mfp/aap-mil-3mfp/aap-mil-4mfp','Milstein Hall - Behind the elevators (2nd floor)','campus-bw, campus-color','42.451232','-76.4836401',null],
     ['aap-nyc-1c','NYTech (direct print; card reader?)','campus-bw, campus-color','42.4439614','-76.5018807',null],
-    ['aap-nyc-1mfp','AAP NYC','campus-color','42.4509482','-76.48409099999999',null],
+    // ['aap-nyc-1mfp','AAP NYC','campus-color','42.4509482','-76.48409099999999',null],  // coordinates are in ithaca oops
     ['aap-rome-1c','Rome - Italy','campus-bw, campus-color','40.7433036','-73.87694379999999',null],
     ['aap-sib-1c','Sibley Hall - 3rd Floor Lab (Barclay Jones),','campus-bw, campus-color','42.4509802','-76.4840158',null],
     ['aap-sib-3c','Sibley Hall - 2nd Floor Lab (ADMS) (direct print; card reader?)','campus-bw, campus-color','42.4509802','-76.4840158',null],

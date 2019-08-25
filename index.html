@@ -29,13 +29,21 @@
             <br/>
     
             <div class="row">
-                <div class="column" onchange="runProgram()">
-                    Color printing?<br/>
-                    <!-- <input type="radio" name="p-type" value="black-and-white"> Black and white<br> -->
-                    <input type="radio" name="p-type" value="color"> Yes<br>
-                    <input type="radio" name="p-type" value="both" checked> Doesn't matter<br>
+                <div class="column">
+                    <!-- Color printing?<br/> -->
+                    <button class="printer-btn" onclick="setPrinterType('c')" style="background-color: #4CAF50;">
+                        Color printer
+                    </button> 
+                    <button class="printer-btn" onclick="setPrinterType('b')" style="background-color: #b8b8b8; color: black;">
+                        Any printer
+                    </button>
+                    <span id="printer-type" style="display: none;">b</span>
                     <br>
                 </div>
+
+                <!-- <input type="radio" name="p-type" value="black-and-white"> Black and white<br> -->
+                <!-- <input type="radio" name="p-type" value="color"> Yes<br> -->
+                <!-- <input type="radio" name="p-type" value="both" checked> Doesn't matter<br> -->
                                 
                 <div class="column" onchange="runProgram()">
                     <!-- Number of printers:<br/> -->
