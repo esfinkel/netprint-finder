@@ -73,7 +73,6 @@ var printers_bw = [
     ['uris-lib1','Uris Library - In Front of Circulation Desk','campus-bw, campus-color','42.447905','-76.484293',{0:[8,25],1:[8,25],2:[8,25],3:[8,25],4:[8,21],5:[12,21],6:[10,25]}],
     ['uris-lib3','Uris Library - Austen Room','campus-bw, campus-color','42.447905','-76.484293',{0:[8,25],1:[8,25],2:[8,25],3:[8,25],4:[8,21],5:[12,21],6:[10,25]}],
     ['uris-lib5','Uris Library - CL3 Lab','campus-bw, campus-color','42.447905','-76.484293',{0:[8,25],1:[8,25],2:[8,25],3:[8,25],4:[8,21],5:[12,21],6:[10,25]}],
-    ['vetlib2','Schurman Hall - S1201 (direct print; card reader?)','campus-color','42.4480179','-76.4661765',{0:[7.5,23],1:[7.5,23],2:[7.5,23],3:[7.5,23],4:[7.5,20],5:[10,20],6:[10,23]}],
     ['vetlib3','Schurman Hall - S1201 (direct print; card reader?)','campus-bw','42.4480179','-76.4661765',{0:[7.5,23],1:[7.5,23],2:[7.5,23],3:[7.5,23],4:[7.5,20],5:[10,20],6:[10,23]}],
     ['vm-bilinski-01','Bilinski Lab (direct print; card reader?)','campus-bw','42.4799809','-76.4511259',null],
     ['vm-wiswall-01/vm-wiswall-02','Wiswall Lab (direct print; card reader?)','campus-bw','42.4799809','-76.4511259',null],
@@ -83,10 +82,10 @@ var printers_bw = [
 
 var printers_color = [
 
-    //['aap-mil-1mfp/aap-mil-2mfp/aap-mil-3mfp/aap-mil-4mfp','Milstein Hall - Behind the elevators (2nd floor)','campus-bw, campus-color','42.451232','-76.4836401',null],
-    //['aap-nyc-1c','NYTech (direct print; card reader?)','campus-bw, campus-color','42.4439614','-76.5018807',null],
-    //['aap-nyc-1mfp','AAP NYC','campus-color','42.4509482','-76.48409099999999',null],
-    //['aap-rome-1c','Rome - Italy','campus-bw, campus-color','40.7433036','-73.87694379999999',null],
+    ['aap-mil-1mfp/aap-mil-2mfp/aap-mil-3mfp/aap-mil-4mfp','Milstein Hall - Behind the elevators (2nd floor)','campus-bw, campus-color','42.451232','-76.4836401',null],
+    ['aap-nyc-1c','NYTech (direct print; card reader?)','campus-bw, campus-color','42.4439614','-76.5018807',null],
+    ['aap-nyc-1mfp','AAP NYC','campus-color','42.4509482','-76.48409099999999',null],
+    ['aap-rome-1c','Rome - Italy','campus-bw, campus-color','40.7433036','-73.87694379999999',null],
     ['aap-sib-1c','Sibley Hall - 3rd Floor Lab (Barclay Jones),','campus-bw, campus-color','42.4509802','-76.4840158',null],
     ['aap-sib-3c','Sibley Hall - 2nd Floor Lab (ADMS) (direct print; card reader?)','campus-bw, campus-color','42.4509802','-76.4840158',null],
     ['aap-sib-3mfp/aap-sib-4c','Sibley Hall - 3rd Floor Balcony (inside dome) (direct print; card reader?)','campus-bw, campus-color','42.4509802','-76.4840158',null],
@@ -135,7 +134,7 @@ var printers_color = [
     ['uris-lib-mfp1','Uris Library Austen Room','campus-bw, campus-color','42.447905','-76.484293',{0:[8,25],1:[8,25],2:[8,25],3:[8,25],4:[8,21],5:[12,21],6:[10,25]}],
     ['uris-lib-mfp2','Uris Main Library (direct print; card reader?)','campus-color','42.447905','-76.484293',{0:[8,25],1:[8,25],2:[8,25],3:[8,25],4:[8,21],5:[12,21],6:[10,25]}],
     ['uris-lib2c','Uris Library - In Front of Circulation Desk','campus-bw, campus-color','42.447905','-76.484293',{0:[8,25],1:[8,25],2:[8,25],3:[8,25],4:[8,21],5:[12,21],6:[10,25]}],
-    ['vetlib5','Schurman Hall - S1201 (direct print; card reader?)','campus-bw, campus-color','42.4480179','-76.4661765',null],
+    ['vetlib2, vetlib5','Schurman Hall - S1201 (direct print; card reader?)','campus-bw, campus-color','42.4480179','-76.4661765',{0:[7.5,23],1:[7.5,23],2:[7.5,23],3:[7.5,23],4:[7.5,20],5:[10,20],6:[10,23]}],
     ['vetschool-library1','Vet School Library','campus-bw, campus-color','42.4474921','-76.4658424',{0:[7.5,23],1:[7.5,23],2:[7.5,23],3:[7.5,23],4:[7.5,20],5:[10,20],6:[10,23]}]
 
 ]
