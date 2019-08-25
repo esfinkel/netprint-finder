@@ -83,18 +83,18 @@ function available(schedule) {
     // 
     // schedule has format {0:[9.0,18.0],1:[8,19],...} or
     //          {0:[,],1:[,],2:[,],3:[,],4:[,],5:[,],6:[,]} where monday is 0
-    if (schedule===null) {
-        // return [false, null];
+    if (schedule===null) { // obviously err toward too many printers
         // console.log('No sched.');
         return ['maybe', null];
     }
     var rightnow = new Date();
-    var dayofweek = (rightnow.getDay()-1)%7;
-    var hour = rightnow.getHours() + rightnow.getMinutes()/60;
+    var dayofweek = (rightnow.getDay()+6)%7;
+    var mins = rightnow.getHours()*60 + rightnow.getMinutes();
     try {
-        var closes_in = Math.round(60*schedule[dayofweek][1] - hour);
+        var closes_in = Math.round(schedule[dayofweek][1]*60 - mins);
+        // console.log('Closes at '+60*schedule[dayofweek][1]+'. Right now it is')
         // console.log('On day ' + ['M', 'T', 'W', 'R', 'F', 'S', 'U'][dayofweek] + ', open from ' + schedule[dayofweek][0] + ' to ' + schedule[dayofweek][1] + '. Open now: '+(schedule[dayofweek][0] <= hour && hour <= schedule[dayofweek][1]-.001));
-        return [(schedule[dayofweek][0] <= hour && hour <= schedule[dayofweek][1]-.001), closes_in];
+        return [(schedule[dayofweek][0]*60 <= mins && mins <= schedule[dayofweek][1]*60-.1), closes_in];
     } catch (error) {
         console.log('Error: '+error);
         return ['maybe', null];        
@@ -106,10 +106,11 @@ function print_answer(dists, type, quantity) {
     var label = 'Showing '+quantity+' printers of type "'+type+'"<br><br>';
     var ans = '<ol>';
     dists.forEach( dist => {
-        if (dist[2]==true) var secondPart = 'Open; closes in about ' + dist[3] + ' minutes.';       // 3
-        else var secondPart = 'Might be open.';                                                     // 3
-        var pAns = '<li>Printer "' + dist[0];                                                       // 1
-        pAns += '". ' + Math.round(dist[1]*100)/100+' km away. ' + secondPart + '</li>';            // 2
+        var pAns = '<li>Printer "' + dist[0];
+        pAns += '". ' + dist[1].toFixed(2) + ' km away. '; // Math.round(dist[1]*100)/100 
+        if (dist[2]==true) pAns += 'Open; closes in about ' + dist[3] + ' minutes.';
+        else pAns += 'Might be open.';
+        pAns += '</li>'; 
         ans += pAns;
     })
     ans += '</ol>';
