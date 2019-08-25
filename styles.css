@@ -75,7 +75,7 @@ body {
     border: none;
     color: white;
     cursor: pointer;
-    padding: 15px 32px;
+    padding: 10px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -93,21 +93,25 @@ body {
 }
 
 
+
+
 .row:after {
     content: "";
     display: table;
     clear: both;
   }
 
-/* Create three equal columns that floats next to each other */
+/* Create two equal columns that floats next to each other */
 .column {
-    float: left;
+    float: left; 
     width: 49%;
-  }
-    
-  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
+    text-align: center;
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
     .column {
-      width: 98%;
+        float: left;
+        width: 98%;
     }
-  }
+}
