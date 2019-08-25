@@ -11,18 +11,19 @@ function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getPosition);
     } else {
-        err.style.display = "block";
-        err.innerText = "Geolocation is not supported by this browser.";
+        statusArea.style.display = "block";
+        statusArea.innerText = "Geolocation is not supported by this browser.";
     }
 }
 
 function getPosition(position) {
+    statusArea.innerHTML = "Acquiring location...";
     currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
     window.console.log("If you're curious:");
     window.console.log(currentLocation);
-    waiting.style.display = "none";
     settings.style.display = "block";
     runProgram();
+    statusArea.style.display = "none";
 }
 
 
@@ -139,9 +140,8 @@ function runProgram() {
 
 function init() {
 
-    waiting = document.getElementById("waiting");       // for whatever reason, having "var" makes it not global in Chrome
+    statusArea = document.getElementById("status");       // for whatever reason, having "var" makes it not global in Chrome
     settings = document.getElementById("settings");
-    err = document.getElementById("err");
     info = document.getElementById("info");
     infoLabel = document.getElementById("infoLabel");
     
