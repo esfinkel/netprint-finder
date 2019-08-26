@@ -116,6 +116,7 @@ function print_answer(dists, type, quantity) {
     ans += '</ol>';
     infoLabel.style.display = "block";
     info.style.display = "block";
+    nudge.style.display = "inline";
     infoLabel.innerHTML = label;
     info.innerHTML = ans;
 }
@@ -153,6 +154,7 @@ function init() {
     info = document.getElementById("info");
     infoLabel = document.getElementById("infoLabel");
     printerType = document.getElementById("printer-type");
+    nudgeText = document.getElementById("nudge");
     
     currentLocation = false;
 
