@@ -1,9 +1,10 @@
 // for each printer, store (0: name, 1: text-form location, 2: bw or color info, 3: decimal latitude, 4: decimal longitude, 5: schedule)
 // for schedule: {0:[,],1:[,],2:[,],3:[,],4:[,],5:[,],6:[,]} where monday is 0
+// "// m" if coordinates were updated manually
 
 
 var printers_bw = [
-    ['aap-nyc-1bw','NYTech (direct print; card reader)','campus-bw, campus-color','40.755805','-73.956233',null],
+    ['aap-nyc-1bw','NYTech (direct print; card reader)','campus-bw, campus-color','40.755805','-73.956233',null], // m
     ['aap-sib-1bw','Sibley Hall - 3rd Floor Lab (Barclay Jones)','campus-bw, campus-color','42.4509802','-76.4840158',null],
     ['aap-sib-3bw','Sibley Hall - 2nd Floor Lab (ADMS) (direct print; card reader?)','campus-bw, campus-color','42.4509802','-76.4840158',null],
     ['aap-sib-4bw','Sibley Hall - 3rd Floor Balcony (inside dome) (direct print; card reader?)','campus-bw, campus-color','42.4509802','-76.4840158',null],
@@ -28,7 +29,7 @@ var printers_bw = [
     ['cit-uris-1bw/cit-uris-2bw','Uris Library - Tower Room Computer Lab - Downstairs from Entrance','campus-bw, campus-color','42.447905','-76.484293',{0:[8,25],1:[8,25],2:[8,25],3:[8,25],4:[8,21],5:[12,21],6:[10,25]}],
     ['cit-uris-3bw','Uris Library - Electronic Classroom - Room B05','campus-bw, campus-color','42.447905','-76.484293',{0:[8,25],1:[8,25],2:[8,25],3:[8,25],4:[8,21],5:[12,21],6:[10,25]}],
     ['cit-wsh-1bw/cit-wsh-2bw','Willard Straight Hall - Computer Lab - Basement Level','campus-bw, campus-color','42.4465919','-76.4856765',{0:[9,16],1:[9,16],2:[9,16],3:[9,16],4:[9,16],5:[0,-1],6:[0,-1]}],
-    ['ciw2','District of Columbia - Cornell in Washington','campus-bw, campus-color','38.908391', '-77.048506' ,null],
+    ['ciw2','District of Columbia - Cornell in Washington','campus-bw, campus-color','38.908391', '-77.048506' ,null], // m
     ['cook-nprint1','Alice Cook House - Computer Lab','campus-bw','42.4489805','-76.4896109',null],
     ['dss-mps-lab1','MPS Statistics computing lab room Mallot 301A - card reader door access for MPS students only','campus-bw','42.4479101','-76.4800518',null],
     ['gs1','Goldwin Smith Hall - Room 338 (direct print; card reader?)','campus-bw','42.44907329999999','-76.4835344',null],
@@ -83,9 +84,9 @@ var printers_bw = [
 var printers_color = [
 
     ['aap-mil-1mfp/aap-mil-2mfp/aap-mil-3mfp/aap-mil-4mfp','Milstein Hall - Behind the elevators (2nd floor)','campus-bw, campus-color','42.451232','-76.4836401',null],
-    ['aap-nyc-1c','NYTech (direct print; card reader?)','campus-bw, campus-color', '40.755805', '-73.956233' ,null],
-    ['aap-nyc-1mfp','AAP NYC','campus-color','40.705446', '-74.012886', null],
-    ['aap-rome-1c','Rome - Italy','campus-bw, campus-color','41.893970', '12.474946',null],
+    ['aap-nyc-1c','NYTech (direct print; card reader?)','campus-bw, campus-color', '40.755805', '-73.956233' ,null], // m
+    ['aap-nyc-1mfp','AAP NYC','campus-color','40.705446', '-74.012886', null], // m
+    ['aap-rome-1c','Rome - Italy','campus-bw, campus-color','41.893970', '12.474946',null], // m
     ['aap-sib-1c','Sibley Hall - 3rd Floor Lab (Barclay Jones),','campus-bw, campus-color','42.4509802','-76.4840158',null],
     ['aap-sib-3c','Sibley Hall - 2nd Floor Lab (ADMS) (direct print; card reader?)','campus-bw, campus-color','42.4509802','-76.4840158',null],
     ['aap-sib-3mfp/aap-sib-4c','Sibley Hall - 3rd Floor Balcony (inside dome) (direct print; card reader?)','campus-bw, campus-color','42.4509802','-76.4840158',null],
@@ -104,7 +105,7 @@ var printers_color = [
     ['cit-uris-4c','Uris Library - Tower Room Computer Lab - Downstairs from Entrance','campus-bw, campus-color','42.447905','-76.484293',{0:[8,25],1:[8,25],2:[8,25],3:[8,25],4:[8,21],5:[12,21],6:[10,25]}],
     ['cit-weill-1c','B25 Weill Hall - 237 Tower Road','campus-bw, campus-color','42.4468068','-76.477214',null],
     ['cit-wsh-3c','Willard Straight Hall - Computer Lab - Basement Level','campus-bw, campus-color','42.4465919','-76.4856765',{0:[9,16],1:[9,16],2:[9,16],3:[9,16],4:[9,16],5:[0,-1],6:[0,-1]}],
-    ['ciw1','District of Columbia - Cornell in Washington','campus-bw, campus-color','38.908391', '-77.048506',null],
+    ['ciw1','District of Columbia - Cornell in Washington','campus-bw, campus-color','38.908391', '-77.048506',null], // m
     ['csmenglab','Gates Hall - Room G23 (direct print; card reader? under construction as of Spr 2019)','campus-bw, campus-color','42.4449769','-76.4810912',null],
     //['fine-lib2c','Fine Arts Library - B56 Sibley Hall','campus-bw, campus-color','42.4512236','-76.4828622',{0:[9,19],1:[9,19],2:[9,19],3:[9,19],4:[9,17],5:[12,17],6:[13,19]}], // might still be under construction idk
     ['hollister2c','Hollister 202 CEE Undergrad Lounge (direct print; card reader?)','campus-bw, campus-color','42.444368','-76.48463919999999',null],
@@ -118,8 +119,8 @@ var printers_color = [
     ['math-lib3c','Mallott Hall - Math Library - Fourth Floor','campus-bw, campus-color','42.4482224','-76.4802083',{0:[8,20],1:[8,20],2:[8,20],3:[8,20],4:[8,20],5:[0,0],6:[13,22]}],
     ['mpslab','Gates Hall - Room G23 (direct print; card reader? under construction as of Spr 2019)','campus-bw, campus-color','42.4449769','-76.4810912',null],
     ['mth-color','Myron Taylor Hall 2nd Floor Computer Lab (direct print; card reader?)','campus-bw, campus-color','42.444460','-76.486113',null],
-    ['nytech-netprnt1','Roosevelt Island - Bloomberg Center Room 181 (direct print; card reader?)','campus-color','40.755641', '-73.956093',null],
-    ['nytech-netprnt2','NYTech - 111 8th Avenue (direct print; card reader?)','campus-color','40.741472', '-74.003385',null],
+    ['nytech-netprnt1','Roosevelt Island - Bloomberg Center Room 181 (direct print; card reader?)','campus-color','40.755641', '-73.956093',null], // m
+    ['nytech-netprnt2','NYTech - 111 8th Avenue (direct print; card reader?)','campus-color','40.741472', '-74.003385',null], // m
     ['olin-lib-4thfloor','Olin Library - Room 425 - Fourth Floor','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
     ['olin-lib-gradlounge','Olin Library Graduate Lounge','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
     ['olin-lib5c','Olin Library - behind the reference desk','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
