@@ -30,36 +30,6 @@ body {
 }
 
 
-.btn#runner {
-    color: #ffffff;
-    text-shadow: 0px  -2px 0px rgba(0,0,0,.5);
-
-    background: linear-gradient(#3d85c6, #073763);
-    height: 50px;
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    padding: 6px 12px;
-
-    -webkit-transition: all .1s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-
-    -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-    -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-    box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-} .btn#runner:hover {
-    background: linear-gradient(#85b3db, #466685);
-} .btn#runner:active {
-    -webkit-transform: translate(0, 4px);
-    -moz-transform: translate(0, 4px);
-    transform: translate(0, 4px);
-
-    -webkit-box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-    -moz-box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-    box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
-}
-
-
 .btn-faded {
     background: inherit;
     font: inherit;
@@ -115,3 +85,40 @@ body {
         width: 98%;
     }
 }
+
+
+
+
+
+
+
+
+
+/* .btn#runner {
+    color: #ffffff;
+    text-shadow: 0px  -2px 0px rgba(0,0,0,.5);
+
+    background: linear-gradient(#3d85c6, #073763);
+    height: 50px;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+
+    -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+} .btn#runner:hover {
+    background: linear-gradient(#85b3db, #466685);
+} .btn#runner:active {
+    -webkit-transform: translate(0, 4px);
+    -moz-transform: translate(0, 4px);
+    transform: translate(0, 4px);
+
+    -webkit-box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    -moz-box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+    box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
+} */
