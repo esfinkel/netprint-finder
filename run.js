@@ -14,9 +14,6 @@ function init() {
     
     currentLocation = false;
 
-    // var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification)); // duck-typing that I found online
-    var isSafari = (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1);
-    if (isSafari) showTipPrompt();
 
     getLocation();
 
@@ -35,11 +32,20 @@ function getPosition(position) {
     currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
     window.console.log("If you're curious:");
     window.console.log(currentLocation);
-    settings.style.display = "block";
     runProgram();
+    displayEverything();
+}
+
+function displayEverything() {
+    settings.style.display = "block";
     statusArea.style.display = "none";
     additionalInfo.style.display = "block";
+    // var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification)); // duck-typing that I found online
+    var isSafari = (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1);
+    if (isSafari) showTipPrompt();
 }
+
+
 
     // called whenever parameters are changed
 
