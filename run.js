@@ -10,11 +10,12 @@ function init() {
     infoLabel = document.getElementById("infoLabel");
     printerType = document.getElementById("printer-type");
     nudgeText = document.getElementById("nudge");
+    additionalInfo = document.getElementById("additional-info");
     
     currentLocation = false;
 
-        // duck-typing that I found online
-    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+    // var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification)); // duck-typing that I found online
+    var isSafari = (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1);
     if (isSafari) showTipPrompt();
 
     getLocation();
@@ -25,8 +26,7 @@ function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getPosition);
     } else {
-        statusArea.style.display = "block";
-        statusArea.innerText = "Geolocation is not supported by this browser.";
+        statusArea.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 
@@ -38,6 +38,7 @@ function getPosition(position) {
     settings.style.display = "block";
     runProgram();
     statusArea.style.display = "none";
+    additionalInfo.style.display = "block";
 }
 
     // called whenever parameters are changed

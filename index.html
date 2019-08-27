@@ -12,77 +12,62 @@
 </head>
 
 <body onload="init()">
-    <div>
-        <div id="status">Waiting to receive location permissions...</div>
+    <div id="status"><br><br><br><br><br>Waiting to receive location permissions...<br>This will allow the website to find the netprint-enabled printers closest to you!<br>Once you grant access, allow a moment for the website to process the location information.</div>
 
-        <div id="err"><br/></div>
-        
-        <div id="settings" style="display: none">
-
-            <div style="font-size: 0.8rem">Note that you'll want to <input id="refresher" class="btn btn-faded" type="button" value="refresh the page" onclick="history.go(0)" /> if your location changes.</div>
-            <br/>
-                
-
-            <!-- printers go here -->
-            <div id="infoLabel" style="display: none"></div> 
-            <div id="info" style="display: none"></div> 
-            <br/>
+    <div id="err"><br/></div>
     
-            <div class="row">
-                <div class="column">
-                    <!-- Color printing?<br/> -->
-                    <button class="printer-btn btn-gray" onclick="setPrinterType('b')">
-                        Any printer
-                    </button>
-                    <button class="printer-btn btn-blue" onclick="setPrinterType('c')">
-                        Color printer
-                    </button> 
-                    <span id="printer-type" style="display: none;">b</span>
-                    <br><br>
-                </div>
+    <div id="settings" style="display: none">
 
-                <!-- <div style="padding: 10px 5px; width: 10px; float: left; background-color: dimgray;"></div> -->
-                <!-- <input type="radio" name="p-type" value="black-and-white"> Black and white<br> -->
-                <!-- <input type="radio" name="p-type" value="color"> Yes<br> -->
-                <!-- <input type="radio" name="p-type" value="both" checked> Doesn't matter<br> -->
-                                
-                <div class="column" onchange="runProgram()">
-                    <!-- Number of printers:<br/> -->
-                    <input type="number" name="quantity" min="1" max="50" step="1" value="5" style="font-size: inherit;"> printers
-                    <br/>
-                </div>
-                
-                <!-- <div class="column">
-                    <p></p>
-                    <button id="runner" class="btn" onclick="runProgram()">Update</button>
-                    <br/>
-                </div> -->
+        <div style="font-size: 0.8rem">Note that you'll want to <input id="refresher" class="btn btn-faded" type="button" value="refresh the page" onclick="history.go(0)" /> if your location changes.</div>
+        <br/>
+            
+
+        <!-- printers go here -->
+        <div id="infoLabel" style="display: none"></div> 
+        <div id="info" style="display: none"></div> 
+        <br/>
+
+        <div class="row">
+            <div class="column">
+                <!-- Color printing?<br/> -->
+                <button class="printer-btn btn-gray" onclick="setPrinterType('b')">
+                    Any printer
+                </button>
+                <button class="printer-btn btn-blue" onclick="setPrinterType('c')">
+                    Color printer
+                </button> 
+                <span id="printer-type" style="display: none;">b</span>
+                <br><br>
             </div>
 
-            <h3>
-                Have you ever rushed to find a netprint-enabled printer before class?
-                Needed one with color printing? Or just like to minimize walking?
-                This is the solution!
-            </h3>
-
+            <!-- <div style="padding: 10px 5px; width: 10px; float: left; background-color: dimgray;"></div> -->
+            <!-- <input type="radio" name="p-type" value="black-and-white"> Black and white<br> -->
+            <!-- <input type="radio" name="p-type" value="color"> Yes<br> -->
+            <!-- <input type="radio" name="p-type" value="both" checked> Doesn't matter<br> -->
+                            
+            <div class="column" onchange="runProgram()">
+                <!-- Number of printers:<br/> -->
+                <input type="number" name="quantity" min="1" max="50" step="1" value="5" style="font-size: inherit;"> printers
+                <br/>
+            </div>
+            
+            <!-- <div class="column">
+                <p></p>
+                <button id="runner" class="btn" onclick="runProgram()">Update</button>
+                <br/>
+            </div> -->
         </div>
 
+        <h3>
+            Have you ever rushed to find a netprint-enabled printer before class?
+            Needed one with color printing? Or just like to minimize walking?<br>
+            This is the solution!
+        </h3>
 
-        <br/><br/>
+    </div>
 
-        <div style="font-size: 0.8rem">
-            <form target="_blank" action="https://forms.gle/s4ptjaZuXGBzFHrK8">
-                Printer not listed? Existing printer has incorrect data?
-                <span id="nudge" style="display: none;">Want to fill in those missing printer schedules?</span>
-                <input class="btn btn-faded" type="submit" value="Update printer database" />
-            </form>
-
-            <br/>
-            
-            <a href="https://github.com/esfinkel/netprint-finder">See the GitHub repository</a>
-            
-            <br><br>
-            
+    <div id="smol" style="font-size: 0.8rem;">
+        <div id="report-issue">
             Problems with the site? <button onclick="reportIssue()" class="btn btn-faded">Report here</button>
 
             <form id="reportIssueForm" style="display: none" action="https://formspree.io/finkelelisabeth@gmail.com" method="POST">
@@ -105,27 +90,42 @@
                     <input class="btn btn-faded" type="submit" className="normlink" value="Submit"/>
                 </div>
             </form>
+        </div>
 
+        <br/>
+
+        <div id="additional-info" style="display: none;">
+            <form target="_blank" action="https://forms.gle/s4ptjaZuXGBzFHrK8">
+                Printer not listed? Existing printer has incorrect data?
+                <span id="nudge" style="display: none;">Want to fill in those missing printer schedules?</span>
+                <input class="btn btn-faded" type="submit" value="Update printer database" />
+            </form>
+
+            <div id="loc-tip" style="display: none">
+                <br> Tip: <br> For Safari on a computer (in some cases),<br>
+                <ol>
+                    <li>click "Safari" in menu bar, then "Settings for This Website"</li>
+                    <li>set "Location" to "Allow"</li>
+                </ol>
+                and Safari will remember that this website is allowed to access your location.
+                <br>This won't affect your settings for any other website.
+                <br><br>
+                <img src="img/safari-tips-1.png" alt="Image of step 1">
+                <img src="img/safari-tips-2.png" alt="Image of step 2">
+            </div>
             <div id="loc-tip-prompt" style="display: none">
                 <br>
                 <a href="#" onclick="showTip();return false;">
                     Stop forgetting location permissions!
                 </a>
             </div>
-            <div id="loc-tip" style="display: none">
-                <br> Tip: <br> On Mac Safari (in some cases),<br>
-                <ol>
-                    <li>click "Safari" in menu bar</li>
-                    <li>click "Settings for This Website"</li>
-                    <li>set "Location" to "Allow"</li> 
-                </ol>
-                and Safari will remember that this website is allowed to access your location.
-                <br>This won't affect your settings for any other website.
-            </div>
-
+            <br><br>
         </div>
 
+        <a href="https://github.com/esfinkel/netprint-finder">See the GitHub repository</a>
 
     </div>
+
+
 </body>
 </html>
