@@ -1,13 +1,27 @@
-// Additional features
-
-function reportIssue() {
-    form = document.getElementById("reportIssueForm");
-    form.style.display = "block";
-}
-
 // Main functionality
 
-function getLocation() {
+    // called once onload
+
+function init() { 
+
+    statusArea = document.getElementById("status");       // for whatever reason, having "var" makes it not global in Chrome
+    settings = document.getElementById("settings");
+    info = document.getElementById("info");
+    infoLabel = document.getElementById("infoLabel");
+    printerType = document.getElementById("printer-type");
+    nudgeText = document.getElementById("nudge");
+    
+    currentLocation = false;
+
+        // duck-typing that I found online
+    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+    if (isSafari) showTipPrompt();
+
+    getLocation();
+
+}
+
+function getLocation() { 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getPosition);
     } else {
@@ -26,31 +40,25 @@ function getPosition(position) {
     statusArea.style.display = "none";
 }
 
+    // called whenever parameters are changed
 
+function runProgram() {
+    var relevant_printers = [];
+    // var type = document.querySelector('input[name="p-type"]:checked').value;
+    var type = 'any';
+    switch (printerType.innerText) {
+        case 'b': {relevant_printers = printers_bw.concat(printers_color); break;}
+        case 'c': {relevant_printers = printers_color; type = "color"; break;}
+        default: {relevant_printers = printers_bw.concat(printers_color); break;}
+    }
+    
+    var quantity = document.querySelector('input[name="quantity"]').value;
 
-function radians(degs) {
-    // convert degrees to radians
-    var pi = Math.PI;
-    return degs * (pi/180);
+    var answer = min_dist(relevant_printers, currentLocation, quantity);
+    print_answer(answer, type, quantity);
 }
 
-function gc_dist(lat_1,lng_1,lat_2,lng_2) {
-    // find great circle distance (in km) between any two points
-    // convert decimal degrees to radians
-    lat_1 = radians(lat_1);
-    lng_1 = radians(lng_1);
-    lat_2 = radians(lat_2);
-    lng_2 = radians(lng_2);
-    // haversine formula
-    var dlng = lng_2 - lng_1;
-    var dlat = lat_2 - lat_1;
-    var a = Math.pow(Math.sin(dlat/2), 2) + Math.cos(lat_1) * Math.cos(lat_2) * Math.pow(Math.sin(dlng/2), 2);
-    var c = 2 * Math.asin(Math.sqrt(a));
-    var km = 6367 * c;
-    // end of calculation
-    // limit decimals
-    return km;
-}
+    // data processing helpers 
 
 function min_dist(printers, me_pos, num_printers) {
     // for every printer:
@@ -76,13 +84,14 @@ function min_dist(printers, me_pos, num_printers) {
 }
 
 function available(schedule) {
-    // return value of: printer's building is open. defaults to True.
+    // return value of: printer's building is open. true, false, or 'maybe'. defaults to 'maybe'.
     // TODO: schedules need to be manually entered, and many haven't.
-    // --schedule information for cornell buildings is not centrally compiled,
-    //   nor stored online in any standardized way
+    //      -- schedule information for cornell buildings is not centrally compiled,
+    //          nor stored online in any standardized way
     // 
     // schedule has format {0:[9.0,18.0],1:[8,19],...} or
     //          {0:[,],1:[,],2:[,],3:[,],4:[,],5:[,],6:[,]} where monday is 0
+    // 
     if (schedule===null) { // obviously err toward too many printers
         // console.log('No sched.');
         return ['maybe', null];
@@ -108,7 +117,7 @@ function print_answer(dists, type, quantity) {
     dists.forEach( dist => {
         var pAns = '<li>Printer "' + dist[0];
         pAns += '". ' + dist[1].toFixed(2) + ' km away. '; // Math.round(dist[1]*100)/100 
-        if (dist[2]==true) pAns += 'Open; closes in about ' + dist[3] + ' minutes.';
+        if (dist[2]==true) pAns += 'Currently open; closes in about ' + dist[3] + ' minutes.';
         else pAns += 'Might be open.';
         pAns += '</li>'; 
         ans += pAns;
@@ -122,22 +131,33 @@ function print_answer(dists, type, quantity) {
 }
 
 
-function runProgram() {
-    var relevant_printers = [];
-    // var type = document.querySelector('input[name="p-type"]:checked').value;
-    var type = 'any';
-    switch (printerType.innerText) {
-        case 'b': {relevant_printers = printers_bw.concat(printers_color); break;}
-        case 'c': {relevant_printers = printers_color; type = "color"; break;}
-        default: {relevant_printers = printers_bw.concat(printers_color); break;}
-    }
-    
-    var quantity = document.querySelector('input[name="quantity"]').value;
+    // math helpers
 
-    var answer = min_dist(relevant_printers, currentLocation, quantity);
-    print_answer(answer, type, quantity);
+function radians(degs) {
+    // convert degrees to radians
+    var pi = Math.PI;
+    return degs * (pi/180);
 }
 
+function gc_dist(lat_1,lng_1,lat_2,lng_2) {
+    // find great circle distance (in km) between any two points
+    // convert decimal degrees to radians
+    lat_1 = radians(lat_1); lng_1 = radians(lng_1);
+    lat_2 = radians(lat_2); lng_2 = radians(lng_2);
+    // haversine formula
+    var dlng = lng_2 - lng_1; var dlat = lat_2 - lat_1;
+    var a = Math.pow(Math.sin(dlat/2), 2) + Math.cos(lat_1) * Math.cos(lat_2) * Math.pow(Math.sin(dlng/2), 2);
+    var c = 2 * Math.asin(Math.sqrt(a));
+    var km = 6367 * c;
+    return km;
+}
+
+// Additional features
+
+function reportIssue() {
+    form = document.getElementById("reportIssueForm");
+    form.style.display = "block";
+}
 
 function setPrinterType(key) {
     if (printerType.innerHTML !== key) {
@@ -146,18 +166,11 @@ function setPrinterType(key) {
     } 
 }
 
-
-function init() {
-
-    statusArea = document.getElementById("status");       // for whatever reason, having "var" makes it not global in Chrome
-    settings = document.getElementById("settings");
-    info = document.getElementById("info");
-    infoLabel = document.getElementById("infoLabel");
-    printerType = document.getElementById("printer-type");
-    nudgeText = document.getElementById("nudge");
-    
-    currentLocation = false;
-
-    getLocation();
-
+function showTipPrompt() {
+    document.getElementById("loc-tip-prompt").style.display = "block";
 }
+
+function showTip() {
+    document.getElementById("loc-tip").style.display = "block";
+}
+
