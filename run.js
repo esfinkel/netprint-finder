@@ -14,22 +14,9 @@ function init() {
     
     currentLocation = false;
 
-    currInd = 0;
-
+    
     getLocation();
-
-}
-
-function testNext() {
-    var query = 'https://www.google.com/maps/search/?api=1&query=';
-    query += printers_bw.concat(printers_color)[currInd][3];
-    query += ',';
-    query += printers_bw.concat(printers_color)[currInd][4];
-
-    document.getElementById("test-next").innerHTML = printers_bw.concat(printers_color)[currInd][1];
-
-    Object.assign(document.createElement('a'), { target: '_blank', href: query}).click();
-    currInd += 1;
+    
 }
 
 function getLocation() { 
@@ -195,3 +182,20 @@ function showTip() {
     document.getElementById("loc-tip").style.display = "block";
 }
 
+
+
+
+// Dead code that I may need to revive at some point
+
+// currInd = 0;
+// function testNext() {
+//     var query = 'https://www.google.com/maps/search/?api=1&query=';
+//     query += printers_bw.concat(printers_color)[currInd][3];
+//     query += ',';
+//     query += printers_bw.concat(printers_color)[currInd][4];
+
+//     document.getElementById("test-next").innerHTML = printers_bw.concat(printers_color)[currInd][1];
+
+//     Object.assign(document.createElement('a'), { target: '_blank', href: query}).click();
+//     currInd += 1;
+// }

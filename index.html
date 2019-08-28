@@ -13,9 +13,6 @@
 
 <body onload="init()">
 
-    <!-- <button onclick="testNext()">Next</button>
-    <div id="test-next"></div> -->
-
     <div id="status"><br><br><br><br><br>Waiting to receive location permissions...<br>This will allow the website to find the netprint-enabled printers closest to you!<br>Once you grant access, allow a moment for the website to process the location information.</div>
 
     <div id="err"><br/></div>
@@ -24,10 +21,9 @@
 
         <div style="font-size: 0.8rem">Note that you'll want to <input id="refresher" class="btn btn-faded" type="button" value="refresh the page" onclick="history.go(0)" /> if your location changes.</div>
         <br/>
-            
 
-        <!-- printers go here -->
         <div id="infoLabel" style="display: none"></div> 
+        <!-- printers go here -->
         <div id="info" style="display: none"></div> 
         <br/>
 
@@ -129,6 +125,15 @@
         <a href="https://github.com/esfinkel/netprint-finder">See the GitHub repository</a>
 
     </div>
+
+
+
+    <!-- Dead code that I may need to revive for whatever reason -->
+
+    <!-- Manually confirm coordinates: -->
+    <!-- <button onclick="testNext()">Next</button>
+    <div id="test-next"></div> -->
+
 
 
 </body>
