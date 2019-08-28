@@ -51,7 +51,7 @@ var printers_bw = [
     ['mth-lawreview','Myron Taylor Hall Law Review Office (direct print; card reader?)','campus-bw','42.444460','-76.486113',null],
     ['mth-studentorg','Myron Taylor Hall Student Organizations Office (direct print; card reader?)','campus-bw','42.444460','-76.486113',null],
     ['music-lib1','Music Library - 3rd floor Lincoln Hall','campus-bw, campus-color','42.4501817','-76.4833675',{0:[9.0,22.0],1:[9.0,22.0],2:[9.0,22.0],3:[9.0,22.0],4:[9.0,17.0],5:[12.0,5.0],6:[14.0,22.0]}],
-    // ['olin-lib1/olin-lib2/olin-lib3/olin-lib4','Olin Library - behind the reference desk','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}], // similar listed in color
+    // ['olin-lib1/olin-lib2/olin-lib3/olin-lib4','Olin Library - MOVED to downstairs in stacks','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}], // similar listed in color
     ['olin-lib6','Olin Library - B12','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
     ['olin-lib7','Olin Library - 5th floor Grad Study','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
     ['orie-netprint2','Rhodes Hall - Room 453 (direct print; no card reader)','campus-bw',42.4433613,-76.4812668,null],
@@ -94,7 +94,7 @@ var printers_color = [
     ['bin-color','Statler Hall 365 - by the lab monitor desk - closest to window','campus-bw, campus-color','42.4454727','-76.48206789999999',null],
     ['catherwood-library1','Catherwood Library','campus-bw, campus-color','42.4472562','-76.4811158',null],
     ['catherwood-np4c','Catherwood Library - 236 Ives Hall - Reference Area','campus-bw, campus-color','42.4472562','-76.4811158',null],
-    ['cbs-olin-basement-2c','Olin Library','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
+    ['cbs-olin-basement-2c','Olin Library - basement','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
     ['cit-carp-2c','Carpenter Hall Computer Lab - Main Floor','campus-bw, campus-color','42.444767','-76.484124',{0:[0,600],1:[0,600],2:[0,600],3:[0,600],4:[0,600],5:[0,600],6:[0,600]}],
     ['cit-mann220a-3c','Mann Library Computer Lab - Room 220A - Second Floor','campus-bw, campus-color','42.448766','-76.476312',{0:[8,24],1:[8,24],2:[8,24],3:[8,24],4:[8,18],5:[12,19],6:[12,24]}],
     ['cit-ph318-3c','Phillips Hall Computer Lab - Room 318','campus-bw, campus-color','42.4445768','-76.4820529',null],
@@ -120,7 +120,7 @@ var printers_color = [
     ['nytech-netprnt2','NYTech - 111 8th Avenue (direct print; card reader?)','campus-color','40.741472', '-74.003385',null], // m
     ['olin-lib-4thfloor','Olin Library - Room 425 - Fourth Floor','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
     ['olin-lib-gradlounge','Olin Library Graduate Lounge','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
-    ['olin-lib5c','Olin Library - behind the reference desk','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
+    ['olin-lib5c','Olin Library - MOVED to downstairs in stacks','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
     ['sage-301-color','Sage Hall Library - Room 302 - Third Floor Collaboration Space','campus-bw, campus-color','42.4458947','-76.4832581',null],
     ['sage-lib1-color','Sage Hall - Library - First Floor','campus-bw, campus-color','42.4458918','-76.4833009',null],
     ['sage-mfp1','Sage Hall Johnson First Floor Room 101','campus-bw, campus-color','42.445897', '-76.483259',null],
