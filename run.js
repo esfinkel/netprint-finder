@@ -178,8 +178,8 @@ function showTipPrompt() {
     document.getElementById("loc-tip-prompt").style.display = "block";
 }
 
-function showTip() {
-    document.getElementById("loc-tip").style.display = "block";
+function toggleTip() {
+    document.getElementById("loc-tip").style.display = (document.getElementById("loc-tip").style.display=="none" ? "block" : "none");
 }
 
 

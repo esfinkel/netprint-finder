@@ -30,8 +30,8 @@ var printers_bw = [
     // ['ciw2','District of Columbia - Cornell in Washington','campus-bw, campus-color','38.908391', '-77.048506' ,null], // similar listed in color
     ['cook-nprint1','Alice Cook House - Computer Lab','campus-bw','42.4489805','-76.4896109',null],
     ['dss-mps-lab1','MPS Statistics computing lab room Mallot 301A - card reader door access for MPS students only','campus-bw','42.4479101','-76.4800518',null],
-    ['gs1','Goldwin Smith Hall - Room 338 (direct print; card reader?)','campus-bw','42.4490733','-76.4835344',null],
-    ['gs3','Goldwin Smith Hall – Room 213 (direct print; card reader?)','campus-bw','42.4490733','-76.4835344',null],
+    ['gs1','Goldwin Smith Hall - Room 338 (direct print; card reader?)','campus-bw','42.4490733','-76.4835344',null], // building open 24/7
+    ['gs3','Goldwin Smith Hall – Room 213 (direct print; card reader?)','campus-bw','42.4490733','-76.4835344',null], // building open 24/7
     // ['hollister1','Hollister 202 CEE Undergrad Lounge (direct print; card reader?)','campus-bw','42.4443332','-76.4847092',null], // similar listed in color
     ['house5','Rose House - Computer Lab - Room# 110','campus-bw','42.4477928','-76.4888006',null],
     ['ilr-lab1/ilr-lab2','Ives Hall - Room 118 - Computer Lab','campus-bw, campus-color','42.4472571','-76.4811162',{0:[8,23],1:[8,23],2:[8,23],3:[8,23],4:[8,17],5:[0,0],6:[14,23]}],
@@ -109,9 +109,9 @@ var printers_color = [
     ['hollister2c','Hollister 202 CEE Undergrad Lounge (direct print; card reader?)','campus-bw, campus-color','42.444368','-76.4846392',null],
     ['kroch-lib-2-mfp/kroch-lib-3-mfp','Kroch Library','campus-bw, campus-color','42.447774','-76.484160',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
     ['lacolor1','Kennedy Hall - Room 467 (direct print; card reader?)','campus-bw, campus-color','42.4482603','-76.4793974',null],
-    ['law-mfp1','Law','campus-bw, campus-color','42.4438549','-76.4857724',{0:[8,20],1:[8,20],2:[8,20],3:[8,20],4:[8,17],5:[11,17],6:[12,20]}],
-    ['lincoln-2floor','Lincoln - second floor','campus-bw, campus-color','42.4501817','-76.4833675',{0:[9.0,22.0],1:[9.0,22.0],2:[9.0,22.0],3:[9.0,22.0],4:[9.0,17.0],5:[12.0,5.0],6:[14.0,22.0]}],
-    ['mann-mfp1/mann-mfp2','Mann','campus-bw, campus-color','42.448766','-76.4763118',{0:[8,24],1:[8,24],2:[8,24],3:[8,24],4:[8,18],5:[12,19],6:[12,24]}],
+    ['law-mfp1','Law ("law-mfp1")','campus-bw, campus-color','42.4438549','-76.4857724',{0:[8,20],1:[8,20],2:[8,20],3:[8,20],4:[8,17],5:[11,17],6:[12,20]}],
+    ['lincoln-2floor','Lincoln - second floor (music library)','campus-bw, campus-color','42.4501817','-76.4833675',{0:[9.0,22.0],1:[9.0,22.0],2:[9.0,22.0],3:[9.0,22.0],4:[9.0,17.0],5:[12.0,5.0],6:[14.0,22.0]}],
+    ['mann-mfp1/mann-mfp2','Mann ("mann-mfp1")','campus-bw, campus-color','42.448766','-76.4763118',{0:[8,24],1:[8,24],2:[8,24],3:[8,24],4:[8,18],5:[12,19],6:[12,24]}],
     ['mann4c','Mann Library - First Floor','campus-bw, campus-color','42.448766','-76.4763118',{0:[8,24],1:[8,24],2:[8,24],3:[8,24],4:[8,18],5:[12,19],6:[12,24]}],
     ['mann5color','Mann Library - Basement B30 Area','campus-bw, campus-color','42.448766','-76.4763118',{0:[8,22],1:[8,22],2:[8,22],3:[8,22],4:[8,17],5:[0,0],6:[0,0]}],
     ['math-lib3c','Mallott Hall - Math Library - Fourth Floor','campus-bw, campus-color','42.4482224','-76.4802083',{0:[8,20],1:[8,20],2:[8,20],3:[8,20],4:[8,20],5:[0,0],6:[13,22]}],
@@ -124,10 +124,10 @@ var printers_color = [
     ['sage-301-color','Sage Hall johnson Library - Room 302 - Third Floor Collaboration Space','campus-bw, campus-color','42.4458947','-76.4832581',null],
     ['sage-lib1-color','Sage Hall - johnson Library - First Floor','campus-bw, campus-color','42.4458918','-76.4833009',null],
     ['sage-mfp1','Sage Hall Johnson library First Floor Room 101','campus-bw, campus-color','42.445897', '-76.483259',null],
-    ['sage-mfp2/sage-mfp3','Sage Hall','campus-bw, campus-color','42.4459','-76.4832',null],
-    ['scl-malott','Mallot','campus-bw, campus-color','42.4482224','-76.4802083',null],
+    ['sage-mfp2/sage-mfp3','Sage Hall ("sage-mfp2")','campus-bw, campus-color','42.4459','-76.4832',null],
+    ['scl-malott','Mallot ("scl-malott")','campus-bw, campus-color','42.4482224','-76.4802083',null],
     ['sha-mslc-color','Nestle Library - west side of reference desk','campus-bw, campus-color',42.445553, -76.482130,null],
-    ['sibley1-b56','Sibley','campus-bw, campus-color','42.4509802','-76.4840158',null],
+    ['sibley1-b56','Sibley (b56?)','campus-bw, campus-color','42.4509802','-76.4840158',null],
     ['sips-ps170-1c','Plant Science Building - Room 170','campus-bw, campus-color','42.4483258','-76.4770262',null],
     ['uris-lib-mfp1','Uris Library Austen Room','campus-bw, campus-color',42.447727, -76.485350,{0:[8,25],1:[8,25],2:[8,25],3:[8,25],4:[8,21],5:[12,21],6:[10,25]}],
     ['uris-lib-mfp2','Uris Main Library (direct print; card reader?)','campus-color',42.447727, -76.485350,{0:[8,25],1:[8,25],2:[8,25],3:[8,25],4:[8,21],5:[12,21],6:[10,25]}],
