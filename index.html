@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>netprint finder</title>
-  <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="Nearest netprint printer on Cornell campus." />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>netprint finder</title>
 
-  <script src="data.js"></script>
-  <script src="run.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145453348-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-145453348-2');
+    </script>
+
+
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Nearest netprint printer on Cornell campus." />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="data.js"></script>
+    <script src="run.js"></script>
 </head>
 
 <body onload="init()">
 
-    <div id="status"><br><br><br><br><br>Waiting to receive location permissions...<br>This will allow the website to find the netprint-enabled printers closest to you!<br>Once you grant access, allow a moment for the website to process the location information.</div>
-
-    <div id="err"><br/></div>
+    <div id="status"><br><br><br><br><br>Waiting to receive location permissions...<br>This will allow the website to find the netprint-enabled printers closest to you!<br>Once you grant access, allow a moment for the website to process the location information.<br></div>
     
-    <div id="settings" style="display: none">
+    <div id="data" style="display: none">
 
         <div style="font-size: 0.8rem">Note that you'll want to <input id="refresher" class="btn btn-faded" type="button" value="refresh the page" onclick="history.go(0)" /> if your location changes.</div>
         <br/>

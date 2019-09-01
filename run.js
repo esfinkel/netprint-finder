@@ -5,7 +5,7 @@
 function init() { 
 
     statusArea = document.getElementById("status");       // for whatever reason, having "var" makes it not global in Chrome
-    settings = document.getElementById("settings");
+    data = document.getElementById("data");
     info = document.getElementById("info");
     infoLabel = document.getElementById("infoLabel");
     printerType = document.getElementById("printer-type");
@@ -37,7 +37,7 @@ function getPosition(position) {
 }
 
 function displayEverything() {
-    settings.style.display = "block";
+    data.style.display = "block";
     statusArea.style.display = "none";
     additionalInfo.style.display = "block";
     // var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification)); // duck-typing that I found online
