@@ -7,10 +7,15 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145453348-2"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-145453348-2');
+        var urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("taggedness") == "untagged") {
+            window.console.log("untagged");
+        } else {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-145453348-2');
+        }
     </script>
 
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
@@ -68,8 +73,8 @@
             </div> -->
         </div>
 
-        <h3>
-            Have you ever rushed to find a netprint-enabled printer before class?
+        <h3 style="text-align: center">
+            Have you ever rushed to find a netprint-enabled printer before class?<br>
             Needed one with color printing? Or just like to minimize walking?<br>
             This is the solution!
         </h3>
@@ -130,9 +135,17 @@
                 </a>
             </div>
             <br><br>
+            These may require a Cornell login and/or WiFi/VPN access: &nbsp; &nbsp;
+            <a href="https://it.cornell.edu/node/3108?utm_source=main">netprint info</a> &nbsp;
+            <a href="https://admin.net-print.cornell.edu/netprint-cgi/qfeatures.cgi">printer list</a> &nbsp;
+            <a href="https://admin.net-print.cornell.edu/netprint-cgi/queuestat.cgi?STATUS">printer statuses</a> &nbsp;
+            <a href="https://net-print.cornell.edu/app?service=page/UserReleaseJobs">direct print</a> &nbsp;
+            <a href="https://it.cornell.edu/net-print/release-method-net-print-without-your-id-card">direct print instructions</a>
+
+            <br><br>
         </div>
 
-        <a href="https://github.com/esfinkel/netprint-finder">See the GitHub repository</a>
+        <small><a href="https://github.com/esfinkel/netprint-finder">See the GitHub repository</a></small>
 
     </div>
 
