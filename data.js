@@ -55,7 +55,7 @@ var printers_bw = [
     ['olin-lib6','Olin Library - B12','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
     ['olin-lib7','Olin Library - 5th floor Grad Study','campus-bw, campus-color','42.447905','-76.484293',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
     ['orie-netprint2','Rhodes Hall - Room 453 (direct print; no card reader)','campus-bw',42.4433613,-76.4812668,null],
-    ['orie-netprint3','Rhodes Hall - Room 421 (moved to 411? direct print; no card reader)','campus-bw',42.4433613,-76.4812668,null],
+    ['orie-netprint3','Rhodes Hall - Room 411 (was 421. direct print; no card reader)','campus-bw',42.4433613,-76.4812668,null],
     ['physci-lib1','Clark Hall - Physical Sciences Library','campus-bw, campus-color','42.4497606','-76.4812001',{0:[0,1000],1:[0,1000],2:[0,1000],3:[0,1000],4:[0,1000],5:[0,1000],6:[0,1000]}],
     ['sage-205/sage-205-bw2','Sage Hall - Room 205 Suite - Next to Dean\'s Office','campus-bw, campus-color','42.4458918','-76.4833009',null],
     ['sage-301-bw','Sage Hall johnson Library - Room 301 - Third Floor Collaboration Space','campus-bw, campus-color','42.4458947','-76.4832581',null],
