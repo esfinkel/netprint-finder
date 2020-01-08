@@ -8,7 +8,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145453348-2"></script>
     <script>
         var urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get("taggedness") == "untagged") {
+        if (urlParams.get("trackedness") == "untracked") {
             window.console.log("untracked");
         } else {
             window.dataLayer = window.dataLayer || [];
@@ -26,6 +26,10 @@
 
     <script src="data.js"></script>
     <script src="run.js"></script>
+
+    <!-- uncomment if you get a Google Maps API Key -->
+    <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&key=INSERT_API_KEY_HERE"></script>
+    <script src="maps.js"></script> -->
 </head>
 
 <body onload="init()">
@@ -80,6 +84,14 @@
         </h3>
 
     </div>
+
+    <!-- for this to work, need to insert API_KEY when loading Google API (see "head") -->
+    <!-- <div id="map-container">
+        <button onclick="makeMap()">Test map</button>
+        <div id="map">
+        </div>
+    </div> -->
+    
 
     <div id="smol" style="font-size: 0.8rem;">
         <div id="report-issue">
