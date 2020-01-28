@@ -80,13 +80,13 @@ var printers_bw = [
 
 var printers_color = [
 
-    ['aap-mil-1mfp/aap-mil-2mfp/aap-mil-3mfp/aap-mil-4mfp','Milstein Hall - Behind the elevators (2nd floor)','campus-bw, campus-color','42.451232','-76.4836401',null],
+    ['aap-mil-1mfp/aap-mil-2mfp/aap-mil-3mfp/aap-mil-4mfp','Second floor of East Sibley, near digital fabrication lab (previously Milstein Hall - Behind the elevators (2nd floor))','campus-bw, campus-color','42.451232','-76.4836401',{0:[0,600],1:[0,600],2:[0,600],3:[0,600],4:[0,600],5:[0,600],6:[0,600]}],
     ['aap-nyc-1c','NYTech (direct print; card reader?)','campus-bw, campus-color', '40.755805', '-73.956233' ,null], 
     ['aap-nyc-1mfp','AAP NYC','campus-color','40.705446', '-74.012886', null],
     ['aap-rome-1c','Rome - Italy','campus-bw, campus-color','41.893970', '12.474946',null], 
-    ['aap-sib-1c','Sibley Hall - 3rd Floor Lab (Barclay Jones)','campus-bw, campus-color','42.4509802','-76.4840158',null],
-    ['aap-sib-3c','Sibley Hall - 2nd Floor Lab (ADMS) (direct print; card reader?)','campus-bw, campus-color','42.4509802','-76.4840158',null],
-    ['aap-sib-3mfp/aap-sib-4c','Sibley Hall - 3rd Floor Balcony (inside dome) (direct print; card reader?)','campus-bw, campus-color','42.4509802','-76.4840158',null],
+    ['aap-sib-1c','Sibley Hall - 3rd Floor Lab (Barclay Jones); bldg open 24/7','campus-bw, campus-color','42.4509802','-76.4840158',null],
+    ['aap-sib-3c','Sibley Hall - 2nd Floor Lab (ADMS) (direct print; card reader?); bldg open 24/7','campus-bw, campus-color','42.4509802','-76.4840158',null],
+    ['aap-sib-3mfp/aap-sib-4c','Sibley Hall - 3rd Floor Balcony (inside dome) (direct print; card reader?); bldg open 24/7','campus-bw, campus-color','42.4509802','-76.4840158',null],
     ['aap-tjaden-1c','Tjaden Hall - Take elev. to 2W (broken as of spr 2019; direct print or card reader)','campus-bw, campus-color','42.4509025','-76.4853131',{0:[9,16],1:[9,16],2:[9,16],3:[9,16],4:[9,16],5:[0,0],6:[0,0]}],
     ['aep-netprint1','Clark Hall - Room 244 (AEP only) (direct print; card reader?)','campus-bw, campus-color','42.4497606','-76.4812001',null,],
     ['africana-1st-floor','Africana first floor','campus-bw, campus-color','42.457403','-76.482239',{0:[9,23],1:[9,23],2:[9,23],3:[9,23],4:[9,17],5:[13,17],6:[16,23]}],
@@ -104,7 +104,7 @@ var printers_color = [
     ['cit-wsh-3c','Willard Straight Hall - Computer Lab - Basement Level','campus-bw, campus-color','42.4465919','-76.4856765',{0:[9,16],1:[9,16],2:[9,16],3:[9,16],4:[9,16],5:[0,-1],6:[0,-1]}],
     ['ciw1','District of Columbia - Cornell in Washington','campus-bw, campus-color','38.908391', '-77.048506',null], 
     ['csmenglab/mpslab','Gates Hall - Room G23 (direct print; card reader? under construction as of Spr 2019)','campus-bw, campus-color','42.4449769','-76.4810912',null],
-    //['fine-lib2c','Fine Arts Library - B56 Sibley Hall','campus-bw, campus-color','42.4512236','-76.4828622',{0:[9,19],1:[9,19],2:[9,19],3:[9,19],4:[9,17],5:[12,17],6:[13,19]}], // might still be under construction idk
+    ['fine-lib2c; sibley1-b56','Fine Arts Library - B56 Sibley Hall','campus-bw, campus-color','42.4512236','-76.4828622',{0:[9,19],1:[9,19],2:[9,19],3:[9,19],4:[9,17],5:[12,17],6:[13,19]}], // might still be under construction idk
     ['hollister2c','Hollister 202 CEE Undergrad Lounge (direct print; card reader?)','campus-bw, campus-color','42.444368','-76.4846392',null],
     ['kroch-lib-2-mfp/kroch-lib-3-mfp','Kroch Library','campus-bw, campus-color','42.447774','-76.484160',{0:[8,26],1:[8,26],2:[8,26],3:[8,26],4:[8,22],5:[10,22],6:[10,26]}],
     ['lacolor1','Kennedy Hall - Room 467 (direct print; card reader?)','campus-bw, campus-color','42.4482603','-76.4793974',null],
@@ -127,7 +127,7 @@ var printers_color = [
     ['sage-mfp2/sage-mfp3','Sage Hall ("sage-mfp2")','campus-bw, campus-color','42.4459','-76.4832',null],
     ['scl-malott','Mallot ("scl-malott")','campus-bw, campus-color','42.4482224','-76.4802083',null],
     ['sha-mslc-color','Nestle Library - west side of reference desk','campus-bw, campus-color',42.445553, -76.482130,null],
-    ['sibley1-b56','Sibley (b56?)','campus-bw, campus-color','42.4509802','-76.4840158',null],
+    // ['sibley1-b56','Sibley (b56?) bldg open 24/7','campus-bw, campus-color','42.4509802','-76.4840158',null], // duplicate
     ['sips-ps170-1c','Plant Science Building - Room 170','campus-bw, campus-color','42.4483258','-76.4770262',null],
     ['uris-lib-mfp1','Uris Library Austen Room','campus-bw, campus-color',42.447727, -76.485350,{0:[8,25],1:[8,25],2:[8,25],3:[8,25],4:[8,21],5:[12,21],6:[10,25]}],
     ['uris-lib-mfp2','Uris Main Library (direct print; card reader?)','campus-color',42.447727, -76.485350,{0:[8,25],1:[8,25],2:[8,25],3:[8,25],4:[8,21],5:[12,21],6:[10,25]}],
