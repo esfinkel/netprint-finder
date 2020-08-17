@@ -39,7 +39,7 @@ function setLocation(location) {
         color: 'blue',
         fillColor: '#08f',
         fillOpacity: 0.5,
-        radius: 6
+        radius: 5
     }).addTo(MAP);
 
     runProgram();
