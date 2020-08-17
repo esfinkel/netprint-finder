@@ -3,7 +3,7 @@
 // coordinates have all been manually confirmed. Let's try to keep it that way.
 
 
-var printers_bw = [
+const printers_bw = [
     // ['aap-nyc-1bw','NYTech (direct print; card reader)','campus-bw, campus-color','40.755805','-73.956233',null], // similar listed in color
     // ['aap-sib-1bw','Sibley Hall - 3rd Floor Lab (Barclay Jones)','campus-bw, campus-color','42.4509802','-76.4840158',null], // similar listed in color
     // ['aap-sib-3bw','Sibley Hall - 2nd Floor Lab (ADMS) (direct print; card reader?)','campus-bw, campus-color','42.4509802','-76.4840158',null], // similar listed in color
@@ -78,7 +78,7 @@ var printers_bw = [
 
 ]
 
-var printers_color = [
+const printers_color = [
 
     ['aap-mil-1mfp/aap-mil-2mfp/aap-mil-3mfp/aap-mil-4mfp','Second floor of East Sibley, near digital fabrication lab (previously Milstein Hall - Behind the elevators (2nd floor))','campus-bw, campus-color','42.451232','-76.4836401',{0:[0,600],1:[0,600],2:[0,600],3:[0,600],4:[0,600],5:[0,600],6:[0,600]}],
     ['aap-nyc-1c','NYTech (direct print; card reader?)','campus-bw, campus-color', '40.755805', '-73.956233' ,null], 

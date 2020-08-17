@@ -5,6 +5,10 @@ body {
     background-color: #eee;
 }
 
+.leaflet-marker-icon {
+    filter: hue-rotate(90deg);
+}
+
 #info {
     /* display: none; Will not appear until there is some data */
 
@@ -14,6 +18,11 @@ body {
     min-height: 100px;
     box-shadow: 5px 10px #888888;
     background: #F8F8FF;  
+}
+
+#map {
+    width: 600px;
+    height: 600px
 }
 
 .btn {

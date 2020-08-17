@@ -3,41 +3,53 @@
     // called once onload
 
 function init() { 
+    CURRENT_LOCATION = false;
+    MAP = null;
+    MARKERS = [];
 
     statusArea = document.getElementById("status");       // for whatever reason, having "var" makes it not global in Chrome
-    data = document.getElementById("data");
+    data1 = document.getElementById("data-pre-map");
+    data2 = document.getElementById("data-post-map");
     info = document.getElementById("info");
     infoLabel = document.getElementById("infoLabel");
     printerType = document.getElementById("printer-type");
     nudgeText = document.getElementById("nudge");
     additionalInfo = document.getElementById("additional-info");
-    
-    currentLocation = false;
 
-    
-    getLocation();
-    
+    setPosition();
 }
 
-function getLocation() { 
+function setPosition() { 
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(getPosition);
+        navigator.geolocation.getCurrentPosition(setLocation);
     } else {
         statusArea.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 
-function getPosition(position) {
+function setLocation(location) {
     statusArea.innerHTML = "Acquiring location...";
-    currentLocation = {lat: position.coords.latitude, lng: position.coords.longitude};
+    coords = {lat: location.coords.latitude, lng: location.coords.longitude}
+    CURRENT_LOCATION = coords;
     window.console.log("If you're curious:");
-    window.console.log(currentLocation);
+    window.console.log(CURRENT_LOCATION);
+
+    MAP = makeMap(coords);
+    L.circle([coords['lat'],coords['lng']], {
+        color: 'blue',
+        fillColor: '#08f',
+        fillOpacity: 0.5,
+        radius: 6
+    }).addTo(MAP);
+
     runProgram();
+
     displayEverything();
 }
 
 function displayEverything() {
-    data.style.display = "block";
+    data1.style.display = "block";
+    data2.style.display = "block";
     statusArea.style.display = "none";
     additionalInfo.style.display = "block";
     // var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification)); // duck-typing that I found online
@@ -51,24 +63,24 @@ function displayEverything() {
     // called whenever parameters are changed
 
 function runProgram() {
-    var relevant_printers = [];
+    var relevantPrinters = [];
     // var type = document.querySelector('input[name="p-type"]:checked').value;
     var type = 'any';
     switch (printerType.innerText) {
-        case 'b': {relevant_printers = printers_bw.concat(printers_color); break;}
-        case 'c': {relevant_printers = printers_color; type = "color"; break;}
-        default: {relevant_printers = printers_bw.concat(printers_color); break;}
+        case 'b': {relevantPrinters = printers_bw.concat(printers_color); break;}
+        case 'c': {relevantPrinters = printers_color; type = "color"; break;}
+        default: {relevantPrinters = printers_bw.concat(printers_color); break;}
     }
     
     var quantity = document.querySelector('input[name="quantity"]').value;
 
-    var answer = min_dist(relevant_printers, currentLocation, quantity);
-    print_answer(answer, type, quantity);
+    var answer = minDist(relevantPrinters, quantity);
+    displayResult(answer, type, quantity);
 }
 
     // data processing helpers 
 
-function min_dist(printers, me_pos, num_printers) {
+function minDist(printers, num_printers) {
     // for every printer:
     //     1. find printer location
     //     2. add printer to list
@@ -81,9 +93,9 @@ function min_dist(printers, me_pos, num_printers) {
     printers.forEach(printer => {        
         var lat = parseFloat(printer[3]);
         var lng = parseFloat(printer[4]);
-        var newdist = gc_dist(me_pos['lat'],me_pos['lng'],lat,lng);
+        var newdist = gcDist(CURRENT_LOCATION['lat'],CURRENT_LOCATION['lng'],lat,lng);
         var avail = available(printer[5]);
-        if (avail[0]!=false) dists.push([printer[1], newdist, avail[0], avail[1]]);
+        if (avail[0]!=false) dists.push([printer[1], newdist, avail[0], avail[1], lat, lng]);
         dists.sort((a, b) => {return a[1] - b[1]});
         if (dists.length > num_printers) dists.pop();
     });
@@ -118,24 +130,30 @@ function available(schedule) {
     }
 }
 
-function print_answer(dists, type, quantity) {
+function displayResult(dists, type, quantity) {
     // Print answer
+    MARKERS.forEach(m => {
+        m.remove(MAP)
+    })
+    
     var label = 'Showing '+quantity+' printers of type "'+type+'"<br><br>';
     var ans = '<ol>';
     dists.forEach( dist => {
-        var pAns = '<li>Printer "' + dist[0];
+        var pAns = 'Printer "' + dist[0];
         pAns += '". ' + dist[1].toFixed(2) + ' km away. '; // Math.round(dist[1]*100)/100 
         if (dist[2]==true) pAns += 'Currently open; closes in about ' + dist[3] + ' minutes.';
         else pAns += 'Might be open.';
-        pAns += '</li>'; 
-        ans += pAns;
+        marker = L.marker([dist[4], dist[5]], {fillColor: "green"}).addTo(MAP).bindPopup(pAns);
+        MARKERS.push(marker);
+        ans += ('<li>'+pAns+'</li>');
     })
     ans += '</ol>';
+    info.innerHTML = ans;
+
     infoLabel.style.display = "block";
     info.style.display = "block";
     nudge.style.display = "inline";
     infoLabel.innerHTML = label;
-    info.innerHTML = ans;
 }
 
 
@@ -147,7 +165,7 @@ function radians(degs) {
     return degs * (pi/180);
 }
 
-function gc_dist(lat_1,lng_1,lat_2,lng_2) {
+function gcDist(lat_1,lng_1,lat_2,lng_2) {
     // find great circle distance (in km) between any two points
     // convert decimal degrees to radians
     lat_1 = radians(lat_1); lng_1 = radians(lng_1);
